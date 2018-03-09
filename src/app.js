@@ -342,16 +342,17 @@ class App {
 
   createNewIngredient(event){
     let name = this.newIngredientName.value
-    let ingredientObj = {ingredient: {name: name}}
-    this.newIngredientName.value = ""
-    fetch('https://mod3-best-cookbook.herokuapp.com/ingredients', {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-        Accepts: "application/json"
-      },
-      body: JSON.stringify(ingredientObj)
-    })
+    if (name !== ""){
+      let ingredientObj = {ingredient: {name: name}}
+      this.newIngredientName.value = ""
+      fetch('https://mod3-best-cookbook.herokuapp.com/ingredients', {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+          Accepts: "application/json"
+        },
+        body: JSON.stringify(ingredientObj)
+      })
       .then(res => res.json())
       .then(json => {
         // this.fetchIngredients()
@@ -369,6 +370,7 @@ class App {
           event.target.checked ? div.style.display = "block" : div.style.display = "none"
         })
       })
+    } 
   }
 
   renderIngredients(){
