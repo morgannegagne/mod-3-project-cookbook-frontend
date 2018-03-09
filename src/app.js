@@ -111,7 +111,7 @@ class App {
 
   saveRecipe(event){
     let newRecipeObj = this.createRecipeObject()
-    fetch('http://localhost:3000/recipes', {
+    fetch('https://mod3-best-cookbook.herokuapp.com/recipes', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -131,7 +131,7 @@ class App {
 
   fetchRecipes(){
     this.recipes = [];
-    fetch('http://localhost:3000/recipes')
+    fetch('https://mod3-best-cookbook.herokuapp.com/recipes')
       .then(res => res.json())
       .then(json => this.createRecipes(json))
   }
@@ -289,7 +289,7 @@ class App {
   patchRecipe(event){
     let recipeObj = this.createRecipeObject()
     let id = event.target.dataset.id
-    fetch(`http://localhost:3000/recipes/${id}`,{
+    fetch(`https://mod3-best-cookbook.herokuapp.com/recipes/${id}`,{
       method: 'PATCH',
       headers: {
         "Content-Type": "application/json",
@@ -310,7 +310,7 @@ class App {
   }
 
   fetchIngredients(){
-    fetch('http://localhost:3000/ingredients')
+    fetch('https://mod3-best-cookbook.herokuapp.com/ingredients')
       .then(res => res.json())
       .then(json => this.createIngredients(json))
   }
@@ -344,7 +344,7 @@ class App {
     let name = this.newIngredientName.value
     let ingredientObj = {ingredient: {name: name}}
     this.newIngredientName.value = ""
-    fetch('http://localhost:3000/ingredients', {
+    fetch('https://mod3-best-cookbook.herokuapp.com/ingredients', {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -391,7 +391,7 @@ class App {
 
     allDeleteButtons.forEach(deleteButton => {
       deleteButton.addEventListener("click", event => {
-        fetch(`http://localhost:3000/recipes/${event.target.dataset.id}`,{
+        fetch(`https://mod3-best-cookbook.herokuapp.com/recipes/${event.target.dataset.id}`,{
           method: "DELETE"
         })
         .then(res => res.json())
