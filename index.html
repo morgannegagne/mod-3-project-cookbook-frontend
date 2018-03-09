@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cookbook</title>
+    <link rel="stylesheet" href="src/styles.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Poller+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+  </head>
+  <body>
+
+
+     <div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    <p style="font-family: 'Poller One', cursive;">Create a recipe</p>
+  </div>
+  <div class="image content">
+    <div class="ui medium image">
+      <img id="recipe_image_edit">
+
+    <div class="ui form">
+      <div class="field">
+        <label>Recipe Name:</label>
+        <input placeholder="Enter recipe name here..." type="text" id="recipe-name">
+      </div>
+      <div class="field">
+        <label>Photo url:</label>
+        <input placeholder="Enter url here..." type="text" id="recipe-url">
+      </div>
+
+
+
+
+
+    </div>
+  </div>
+
+    <div class="description">
+      <div class="ui form">
+
+        <div class="field">
+          <label>Directions:</label>
+          <textarea rows="2" placeholder="Enter directions here..." id="recipe-directions"></textarea>
+        </div>
+
+        <div class="field">
+          <label>Ingredients:</label>
+          <div class="ui grid" id="ingredients-checkbox"></div>
+        </div>
+
+        <div class="field">
+          <div class="ui action input">
+            <input id="new-ingredient-name" placeholder="add ingredient" type="text">
+            <div id="add-new-ingredient" type="button" name="button" class="ui submit button">Add</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <div id="submit-new-recipe" class="ui submit red button" style="">Submit</div>
+    <div data-id="" id="edit-recipe-button" class="ui edit yellow button" style="">Edit</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="ui container">
+
+
+
+  <div class="ui three item massive menu borderless">
+
+    <!-- <div class="item">
+      <i class="large leaf icon"></i>
+    </div> -->
+    <a class="item">
+    </a>
+    <a class="item">
+      <h1 style="font-family: 'Poller One', cursive; font-size: 2em;">~ THE BEST COOKBOOK ~</h1>
+    </a>
+    <a class="item">
+    </a>
+
+          <!-- <div class="fitted item">
+          </div> -->
+
+  <!-- <div class="right menu"> -->
+    <!-- <div class="item">
+      <a id="add-new-recipe" class="ui massive red button">Add Recipe</a>
+    </div> -->
+  <!-- </div> -->
+
+  </div>
+
+
+    <!-- <div class="ui inverted blue menu">
+      <div class='item'>
+
+        <h2 class="ui header">
+          <div class="content">
+            Cookbook
+          </div>
+          <div class="sub header">
+            Create Recipes
+          </div>
+        </h2>
+
+      </div>
+      <div class="item">
+        <button id="add-new-recipe" class="ui right floated button">Add Recipe</button>
+      </div>
+    </div> -->
+<!--
+<div class="ui basic segment">
+  <div id="new-recipe-form" class="ui segment" style="display: none;">
+    <div class="ui equal width grid">
+
+      <div class="column">
+        <div class="ui rounded image">
+          <img id="recipe_image_edit" src="https://semantic-ui.com/images/wireframe/image.png">
+        </div>
+        <div class="ui form">
+          <div class="field">
+            <label>Photo</label>
+            <input placeholder="Enter url here..." type="text" id="recipe-url">
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="ui form">
+
+          <div class="field">
+            <label>Name</label>
+            <input placeholder="Enter recipe name here..." type="text" id="recipe-name">
+          </div> -->
+
+        <!-- <div class="field">
+        <label>Photo</label>
+        <input placeholder="Enter url here..." type="text" id="recipe-url">
+        </div> -->
+
+          <!-- <div class="field">
+            <label>Directions</label>
+            <textarea rows="2" placeholder="Enter directions here..." id="recipe-directions"></textarea>
+          </div>
+
+          <div class="field">
+            <div class="ui grid" id="ingredients-checkbox"></div>
+          </div>
+
+          <div class="field">
+            <div class="ui action input">
+              <input id="new-ingredient-name" placeholder="add ingredient" type="text">
+              <div id="add-new-ingredient" type="button" name="button" class="ui submit button">Add</div>
+            </div>
+          </div>
+
+          <div id="submit-new-recipe" class="fluid ui submit yellow button" style="">Submit</div>
+
+          <div data-id="" id="edit-recipe-button" class="huge ui edit red button" style="">Edit</div>
+        </div>
+      </div>
+  </div>
+</div>
+</div> -->
+
+<div class="ui basic segment">
+
+<div class="ui secondary menu borderless">
+
+
+      <a class="ui icon input">
+        <input class="prompt" id="search-recipes" type="text" placeholder="Search recipes...">
+        <i class="search icon"></i>
+      </a>
+      <a class="ui item">
+        <a class="ui icon input" id="add-included-ingredient">
+          <input class="prompt" type="text" placeholder="Include ingredients..." id="include-ingredient-field">
+          <i class="plus circle icon" id="add-icon"></i>
+        </a>
+      </a>
+      <a class="ui item">
+        Sort: <span id="sort-a-z">A-Z</span> | <span id="sort-date">Date</span>
+        <a class="ui right aligned header" id="included-ingredients"></a>
+      </a>
+  <div class="right menu">
+    <a id="add-new-recipe" class="ui large red button">Add Recipe</a>
+  </div>
+
+  <div class="ui divider"></div>
+</div>
+</div>
+
+
+<!-- Dividing header to sort recipes alphabetically or by date created -->
+<!-- <div class="ui basic segment">
+
+
+  <div class="ui left aligned">
+    <div class="ui search">
+
+      <div class="ui icon input">
+        <input class="prompt" id="search-recipes" type="text" placeholder="Search recipes...">
+        <i class="search icon"></i>
+      </div>
+
+      <div class="ui icon input" id="add-included-ingredient">
+        <input class="prompt" type="text" placeholder="Include ingredients..." id="include-ingredient-field">
+        <i class="plus circle icon" id="add-icon"></i>
+      </div>
+
+      <span>Sort: <a id="sort-a-z" style="font-weight: normal">  A-Z </a> | <a id="sort-date" style="font-weight: normal">Date</a></span>
+      <div class="ui right aligned header" id="included-ingredients"></div>
+      </div>
+    </div>
+
+    <div class="ui left aligned">
+      <a id="add-new-recipe" class="ui huge red button">Add Recipe</a>
+    </div>
+
+
+  </div> -->
+
+<!-- end dividing header -->
+<div class="ui basic segment">
+  <div class="ui four column grid" id="recipes"></div>
+</div>
+
+</div>
+
+
+
+  <script src="src/recipe_ingredient.js"></script>
+  <script src="src/ingredient.js"></script>
+  <script src="src/recipe.js"></script>
+  <script src="src/app.js"></script>
+  <script src="src/index.js"></script>
+
+  </body>
+</html>
